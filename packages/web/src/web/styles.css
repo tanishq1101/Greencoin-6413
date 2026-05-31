@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+
+  --color-forest: #14342b;
+  --color-emerald: #1b4d3e;
+  --color-moss: #2f6b4f;
+  --color-cream: #f4f1e9;
+  --color-paper: #fbfaf5;
+  --color-charcoal: #1e1e1b;
+  --color-gold: #c9a24b;
+  --color-gold-light: #e3c16f;
+  --color-sage: #d8d6c8;
+
+  --font-display: "Fraunces", serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  --background: #f4f1e9;
+  --foreground: #1e1e1b;
+  --card: #fbfaf5;
+  --card-foreground: #1e1e1b;
+  --primary: #14342b;
+  --primary-foreground: #f4f1e9;
+  --muted: #ece8dc;
+  --muted-foreground: #6b6a5e;
+  --border: #e2dfd2;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .tabular { font-variant-numeric: tabular-nums; }
+  .coin-gradient {
+    background: linear-gradient(135deg, #e3c16f 0%, #c9a24b 50%, #b8862f 100%);
+  }
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Pretty native scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #d8d6c8; border-radius: 99px; }
+::-webkit-scrollbar-track { background: transparent; }
