@@ -46,20 +46,36 @@ export default function SignUp() {
 
           <form onSubmit={submit} className="mt-6 space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <Field label="Your name"><input className="input" required value={form.name} onChange={set("name")} placeholder="Aarav Sharma" /></Field>
-              <Field label="Family name"><input className="input" required value={form.familyName} onChange={set("familyName")} placeholder="Sharma" /></Field>
+              <label className="block" htmlFor="signup-name">
+                <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Your name</span>
+                <input id="signup-name" className="input" required value={form.name} onChange={set("name")} placeholder="Aarav Sharma" aria-label="Your name" />
+              </label>
+              <label className="block" htmlFor="signup-family-name">
+                <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Family name</span>
+                <input id="signup-family-name" className="input" required value={form.familyName} onChange={set("familyName")} placeholder="Sharma" aria-label="Family name" />
+              </label>
             </div>
-            <Field label="Email"><input type="email" className="input" required value={form.email} onChange={set("email")} placeholder="you@colony.com" /></Field>
-            <Field label="Password"><input type="password" className="input" required minLength={8} value={form.password} onChange={set("password")} placeholder="At least 8 characters" /></Field>
+            <label className="block" htmlFor="signup-email">
+              <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Email</span>
+              <input id="signup-email" type="email" className="input" required value={form.email} onChange={set("email")} placeholder="you@colony.com" aria-label="Email" />
+            </label>
+            <label className="block" htmlFor="signup-password">
+              <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Password</span>
+              <input id="signup-password" type="password" className="input" required minLength={8} value={form.password} onChange={set("password")} placeholder="At least 8 characters" aria-label="Password" />
+            </label>
             <div className="grid grid-cols-2 gap-4">
-              <Field label="Colony">
-                <select className="input" value={form.colonyName} onChange={set("colonyName")}>
+              <label className="block" htmlFor="signup-colony">
+                <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Colony</span>
+                <select id="signup-colony" className="input" value={form.colonyName} onChange={set("colonyName")} aria-label="Colony">
                   <option>Green Meadows</option>
                   <option>Palm Grove</option>
                   <option>Riverside Heights</option>
                 </select>
-              </Field>
-              <Field label="Flat / House"><input className="input" required value={form.flatNumber} onChange={set("flatNumber")} placeholder="A-101" /></Field>
+              </label>
+              <label className="block" htmlFor="signup-flat">
+                <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Flat / House</span>
+                <input id="signup-flat" className="input" required value={form.flatNumber} onChange={set("flatNumber")} placeholder="A-101" aria-label="Flat / House" />
+              </label>
             </div>
             {error && <p className="text-sm text-red-600">{error}</p>}
             <button disabled={loading}
@@ -85,14 +101,5 @@ export default function SignUp() {
 
       <style>{`.input{width:100%;border:1px solid var(--border);background:var(--card);border-radius:.75rem;padding:.8rem 1rem;font-size:15px;outline:none}.input:focus{border-color:#2f6b4f;box-shadow:0 0 0 3px rgba(47,107,79,.12)}`}</style>
     </div>
-  );
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">{label}</span>
-      {children}
-    </label>
   );
 }

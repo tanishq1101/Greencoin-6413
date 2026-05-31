@@ -72,7 +72,7 @@ export default function Helper() {
       )}
 
       <form onSubmit={(e) => { e.preventDefault(); submit(input); }} className="mt-3 flex gap-2">
-        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask GreenBot…"
+        <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask GreenBot…" aria-label="Ask GreenBot"
           className="flex-1 border border-border bg-card rounded-2xl px-4 py-3 text-sm outline-none focus:border-moss" />
         <button type="submit" disabled={send.isPending || !input.trim()}
           className="size-12 grid place-items-center bg-forest text-cream rounded-2xl disabled:opacity-50"><Send size={18} /></button>

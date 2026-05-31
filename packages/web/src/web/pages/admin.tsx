@@ -86,7 +86,7 @@ function Queue() {
 
             {adjustId === r.id ? (
               <div className="mt-3 flex items-center gap-2">
-                <input type="number" min={0} value={adjustVal} onChange={(e) => setAdjustVal(Number(e.target.value))}
+                <input type="number" min={0} value={adjustVal} onChange={(e) => setAdjustVal(Number(e.target.value))} aria-label="Adjust coins"
                   className="w-24 border border-border bg-card rounded-lg px-3 py-2 text-sm" />
                 <button onClick={() => review.mutate({ id: r.id, action: "adjust", coins: adjustVal })} disabled={review.isPending}
                   className="bg-forest text-cream rounded-lg px-3 py-2 text-sm font-semibold">Save</button>

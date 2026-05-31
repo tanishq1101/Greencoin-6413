@@ -45,14 +45,16 @@ export default function SignIn() {
           <p className="text-charcoal/60 mt-1.5">Log returns, earn coins, climb the ranks.</p>
 
           <form onSubmit={submit} className="mt-7 space-y-4">
-            <Field label="Email">
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
+            <label className="block" htmlFor="signin-email">
+              <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Email</span>
+              <input id="signin-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required aria-label="Email"
                 className="input" placeholder="you@colony.com" />
-            </Field>
-            <Field label="Password">
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
+            </label>
+            <label className="block" htmlFor="signin-password">
+              <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Password</span>
+              <input id="signin-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required aria-label="Password"
                 className="input" placeholder="••••••••" />
-            </Field>
+            </label>
             {error && <p className="text-sm text-red-600">{error}</p>}
             <button disabled={loading}
               className="w-full bg-forest text-cream font-semibold rounded-xl py-3.5 hover:bg-emerald transition flex items-center justify-center gap-2 disabled:opacity-60">
@@ -72,14 +74,5 @@ export default function SignIn() {
 
       <style>{`.input{width:100%;border:1px solid var(--border);background:var(--card);border-radius:.75rem;padding:.8rem 1rem;font-size:15px;outline:none}.input:focus{border-color:#2f6b4f;box-shadow:0 0 0 3px rgba(47,107,79,.12)}`}</style>
     </div>
-  );
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <label className="block">
-      <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">{label}</span>
-      {children}
-    </label>
   );
 }
