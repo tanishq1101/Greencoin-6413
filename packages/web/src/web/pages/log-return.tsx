@@ -72,7 +72,7 @@ export default function LogReturn() {
       <div className="rounded-2xl bg-moss/8 border border-moss/20 p-4">
         <label htmlFor="ai-description" className="text-sm font-medium text-forest flex items-center gap-2 mb-2"><Wand2 size={16} /> Not sure of the type? Describe it</label>
         <div className="flex gap-2">
-          <input id="ai-description" value={aiText} onChange={(e) => setAiText(e.target.value)} placeholder="e.g. empty 1L Bisleri water bottle"
+          <input id="ai-description" value={aiText} onChange={(e) => setAiText(e.target.value)} placeholder="e.g. empty 1L Bisleri water bottle" aria-label="Describe container for AI"
             className="flex-1 border border-border bg-card rounded-xl px-3.5 py-2.5 text-sm outline-none focus:border-moss" />
           <button onClick={() => aiText && categorize.mutate()} disabled={categorize.isPending || !aiText}
             className="bg-moss text-cream rounded-xl px-4 text-sm font-semibold flex items-center gap-1.5 disabled:opacity-50">
@@ -115,12 +115,12 @@ export default function LogReturn() {
       <div className="grid sm:grid-cols-2 gap-4">
         <label htmlFor="return-brand" className="block">
           <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Brand (optional)</span>
-          <input id="return-brand" value={brand} onChange={(e) => setBrand(e.target.value)} placeholder="Bisleri, Amul…"
+          <input id="return-brand" value={brand} onChange={(e) => setBrand(e.target.value)} placeholder="Bisleri, Amul…" aria-label="Brand"
             className="w-full border border-border bg-card rounded-xl px-3.5 py-2.5 text-sm outline-none focus:border-moss" />
         </label>
         <label htmlFor="return-note" className="block">
           <span className="text-sm font-medium text-charcoal/75 mb-1.5 block">Note (optional)</span>
-          <input id="return-note" value={note} onChange={(e) => setNote(e.target.value)} placeholder="Where from…"
+          <input id="return-note" value={note} onChange={(e) => setNote(e.target.value)} placeholder="Where from…" aria-label="Note"
             className="w-full border border-border bg-card rounded-xl px-3.5 py-2.5 text-sm outline-none focus:border-moss" />
         </label>
       </div>
