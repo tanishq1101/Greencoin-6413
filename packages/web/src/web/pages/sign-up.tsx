@@ -46,20 +46,20 @@ export default function SignUp() {
 
           <form onSubmit={submit} className="mt-6 space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <Field label="Your name"><input className="input" required value={form.name} onChange={set("name")} placeholder="Aarav Sharma" /></Field>
-              <Field label="Family name"><input className="input" required value={form.familyName} onChange={set("familyName")} placeholder="Sharma" /></Field>
+              <Field label="Your name"><input className="input" required value={form.name} onChange={set("name")} placeholder="Aarav Sharma" aria-label="Your name" /></Field>
+              <Field label="Family name"><input className="input" required value={form.familyName} onChange={set("familyName")} placeholder="Sharma" aria-label="Family name" /></Field>
             </div>
-            <Field label="Email"><input type="email" className="input" required value={form.email} onChange={set("email")} placeholder="you@colony.com" /></Field>
-            <Field label="Password"><input type="password" className="input" required minLength={8} value={form.password} onChange={set("password")} placeholder="At least 8 characters" /></Field>
+            <Field label="Email"><input type="email" className="input" required value={form.email} onChange={set("email")} placeholder="you@colony.com" aria-label="Email" /></Field>
+            <Field label="Password"><input type="password" className="input" required minLength={8} value={form.password} onChange={set("password")} placeholder="At least 8 characters" aria-label="Password" /></Field>
             <div className="grid grid-cols-2 gap-4">
               <Field label="Colony">
-                <select className="input" value={form.colonyName} onChange={set("colonyName")}>
+                <select className="input" value={form.colonyName} onChange={set("colonyName")} aria-label="Colony">
                   <option>Green Meadows</option>
                   <option>Palm Grove</option>
                   <option>Riverside Heights</option>
                 </select>
               </Field>
-              <Field label="Flat / House"><input className="input" required value={form.flatNumber} onChange={set("flatNumber")} placeholder="A-101" /></Field>
+              <Field label="Flat / House"><input className="input" required value={form.flatNumber} onChange={set("flatNumber")} placeholder="A-101" aria-label="Flat / House" /></Field>
             </div>
             {error && <p className="text-sm text-red-600">{error}</p>}
             <button disabled={loading}

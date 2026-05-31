@@ -110,7 +110,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Mobile slide menu */}
       {menuOpen && (
         <div className="md:hidden fixed inset-0 z-50">
-          <div className="absolute inset-0 bg-black/30" onClick={() => setMenuOpen(false)} />
+          <button type="button" aria-label="Close menu" className="absolute inset-0 bg-black/30" onClick={() => setMenuOpen(false)} />
           <div className="absolute right-0 top-0 h-full w-72 bg-paper p-5 flex flex-col">
             <div className="flex items-center justify-between mb-6">
               <Logo />

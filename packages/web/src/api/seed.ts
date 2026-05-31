@@ -8,8 +8,6 @@ import { auth } from "./auth";
 import { eq, sql } from "drizzle-orm";
 import { coinsForReturn, appendLedger } from "./lib/coins";
 
-const COLONIES = ["Green Meadows", "Palm Grove", "Riverside Heights"];
-
 const FAMILIES = [
   { name: "Aarav Sharma", family: "Sharma", colony: "Green Meadows", flat: "A-101" },
   { name: "Diya Patel", family: "Patel", colony: "Green Meadows", flat: "A-204" },

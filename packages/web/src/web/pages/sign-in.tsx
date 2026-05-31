@@ -46,11 +46,11 @@ export default function SignIn() {
 
           <form onSubmit={submit} className="mt-7 space-y-4">
             <Field label="Email">
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required aria-label="Email"
                 className="input" placeholder="you@colony.com" />
             </Field>
             <Field label="Password">
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required
+              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required aria-label="Password"
                 className="input" placeholder="••••••••" />
             </Field>
             {error && <p className="text-sm text-red-600">{error}</p>}
